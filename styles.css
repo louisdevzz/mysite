@@ -1,0 +1,344 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+.header{
+    margin: 2rem;
+    
+}
+.header_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.img_logo{
+    width: 150px;
+    height: 35px;
+}
+ul li a{
+    font-size: 20px;
+    color: black;
+    font-weight: 600;
+}
+.card {
+    overflow: visible;
+    width: 190px;
+    height: 254px;
+  }
+  
+  .content {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 300ms;
+    box-shadow: 0px 0px 10px 1px #000000ee;
+    border-radius: 5px;
+  }
+  
+  .front, .back {
+    background-color: #151515;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .back {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .back::before {
+    position: absolute;
+    content: ' ';
+    display: block;
+    width: 160px;
+    height: 160%;
+    background: linear-gradient(90deg, transparent, #ff9966, #ff9966, #ff9966, #ff9966, transparent);
+    animation: rotation_481 5000ms infinite linear;
+  }
+  
+  .back-content {
+    position: absolute;
+    width: 99%;
+    height: 99%;
+    background-color: #151515;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .card:hover .content {
+    transform: rotateY(180deg);
+  }
+  
+  @keyframes rotation_481 {
+    0% {
+      transform: rotateZ(0deg);
+    }
+  
+    0% {
+      transform: rotateZ(360deg);
+    }
+  }
+  
+  .front {
+    transform: rotateY(180deg);
+    color: white;
+  }
+  
+  .front .front-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .front-content .badge {
+    background-color: #00000055;
+    padding: 2px 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
+    width: fit-content;
+  }
+  
+  .description {
+    box-shadow: 0px 0px 10px 5px #00000088;
+    width: 100%;
+    padding: 10px;
+    background-color: #00000099;
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+  }
+  
+  .title {
+    font-size: 11px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .title p {
+    width: 50%;
+  }
+  
+  .card-footer {
+    color: #ffffff88;
+    margin-top: 5px;
+    font-size: 8px;
+  }
+  
+  .front .img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #ffbb66;
+    position: relative;
+    filter: blur(15px);
+    animation: floating 2600ms infinite linear;
+  }
+  
+  #bottom {
+    background-color: #ff8866;
+    left: 50px;
+    top: 0px;
+    width: 150px;
+    height: 150px;
+    animation-delay: -800ms;
+  }
+  
+  #right {
+    background-color: #ff2233;
+    left: 160px;
+    top: -80px;
+    width: 30px;
+    height: 30px;
+    animation-delay: -1800ms;
+  }
+  
+  @keyframes floating {
+    0% {
+      transform: translateY(0px);
+    }
+  
+    50% {
+      transform: translateY(10px);
+    }
+  
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  .button {
+    margin-top: 50px;
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 10px 10px 20px rgba(0,0,0,.05);
+    background-color: #fff;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button-decor {
+    position: absolute;
+    inset: 0;
+    background-color: var(--clr);
+    transform: translateX(-100%);
+    transition: transform .3s;
+    z-index: 0;
+  }
+  
+  .button-content {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .button__icon {
+    width: 48px;
+    height: 40px;
+    background-color: var(--clr);
+    display: grid;
+    place-items: center;
+  }
+  
+  .button__text {
+    display: inline-block;
+    transition: color .2s;
+    padding: 2px 1.5rem 2px;
+    padding-left: .75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+  }
+  
+  .button:hover .button__text {
+    color: #fff;
+  }
+  
+  .button:hover .button-decor {
+    transform: translate(0);
+  }
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* From uiverse.io by @satyamchaudharydev */
+/* removing default style of button */
+
+.form button {
+    border: none;
+    background: none;
+    color: #8b8ba7;
+  }
+  /* styling of whole input container */
+  .form {
+    --timing: 0.3s;
+    --width-of-input: 200px;
+    --height-of-input: 40px;
+    --border-height: 2px;
+    --input-bg: #fff;
+    --border-color: #2f2ee9;
+    --border-radius: 30px;
+    --after-border-radius: 1px;
+    position: relative;
+    width: var(--width-of-input);
+    height: var(--height-of-input);
+    display: flex;
+    align-items: center;
+    padding-inline: 0.8em;
+    border-radius: var(--border-radius);
+    transition: border-radius 0.5s ease;
+    background: var(--input-bg,#fff);
+  }
+  /* styling of Input */
+  .input {
+    font-size: 0.9rem;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    border: none;
+  }
+  /* styling of animated border */
+  .form:before {
+    content: "";
+    position: absolute;
+    background: var(--border-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    height: var(--border-height);
+    left: 0;
+    bottom: 0;
+    border-radius: 1px;
+    transition: transform var(--timing) ease;
+  }
+  /* Hover on Input */
+  .form:focus-within {
+    border-radius: var(--after-border-radius);
+  }
+  
+  input:focus {
+    outline: none;
+  }
+  /* here is code of animated border */
+  .form:focus-within:before {
+    transform: scale(1);
+  }
+  /* styling of close button */
+  /* == you can click the close button to remove text == */
+  .reset {
+    border: none;
+    background: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+  /* close button shown when typing */
+  input:not(:placeholder-shown) ~ .reset {
+    opacity: 1;
+    visibility: visible;
+  }
+  /* sizing svg icons */
+  .form svg {
+    width: 17px;
+    margin-top: 3px;
+  }
